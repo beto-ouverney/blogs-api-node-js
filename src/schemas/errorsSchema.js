@@ -1,4 +1,8 @@
 const errorsSchema = {
+  userAlreadyExists: {
+    status: 409,
+    message: 'User already registered',
+  },
   misssingFields: {
     status: 400,
     message: 'Some required fields are missing',
@@ -7,41 +11,33 @@ const errorsSchema = {
      status: 400,
      message: 'Invalid fields',
   },
-  invalidId: {
-    status: 400,
-    message: 'Id deve ser um número',
-  },
   emailIsRequired: {
     status: 400,
-    message: 'Some required fields are missing',
-  },
-  invalidEmail: {
-    status: 400,
-    message: 'O "email" deve ter o formato "email@email.com"',
-  },
-  passwordIsRequired: {
-    status: 400,
-    message: 'O campo "password" é obrigatório',
+    message: '"email" must be a valid email',
   },
   invalidPassword: {
     status: 400,
-    message: 'O "password" deve ter pelo menos 6 caracteres',
+    message: '"password" length must be at least 6 characters long',
+  },
+  passwordIsRequired: {
+    status: 400,
+    message: '"password" is required',
   },
   tokenNotFound: {
     status: 401,
-    message: 'Token não encontrado',
+    message: 'Token not found',
   },
   invalidToken: {
     status: 401,
-    message: 'Token inválido',
+    message: 'Expired or invalid token',
   },
-  nameIsRequired: {
+  displayNameIsRequired: {
     status: 400,
-    message: 'O campo "name" é obrigatório',
+    message: '"displayName" is required',
   },
-  invalidName: {
+  displayNameInvalid: {
     status: 400,
-    message: 'O "name" deve ter pelo menos 3 caracteres',
+    message: '"displayName" length must be at least 8 characters long',
   },
 };
 

@@ -4,6 +4,7 @@ const { ValidateLogin } = require('../middlewares/validateLogin');
 
 const userRoutes = Router();
 
-userRoutes.post('/login', ValidateLogin, UserControllers.UserLoginController);
+userRoutes.post('/login', ValidateLogin, UserControllers.UserLoginController)
+.post('/user', UserControllers.UserAddController);
 
 module.exports = { userRoutes };

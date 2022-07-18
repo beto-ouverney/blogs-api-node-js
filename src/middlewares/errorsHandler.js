@@ -1,15 +1,16 @@
+const { CustomError } = require('../helpers/CustomError');
+
 class ErrorsHandler {
   constructor(defaultStatus = 500) { 
     this.defaultStatus = defaultStatus;
   }
   
   handle(error, _req, res, _next) {
-    console.log('TESTE1');
-    console.log(error);
-    if (error instanceof Error) {
+    if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    return res.status(this.defaultStatus).json({ message: 'Internal error' });
+    if (!this.defaultStatus) this.defaultStatus = 500;
+    return res.status(this.defaultStatus).json({ message: error.message });
   }
 }
 

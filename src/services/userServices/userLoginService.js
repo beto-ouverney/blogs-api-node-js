@@ -17,8 +17,8 @@ async function UserLoginService(email, password) {
     throw new CustomError(errorsSchema.invalidFields.status, 
     errorsSchema.invalidFields.message); 
   }
-
-  const token = CreateToken({ email, password });
+  const { passwordHash: _, ...userWithoutPassword } = user;
+  const token = await CreateToken(userWithoutPassword);
   
   return token;
 }
