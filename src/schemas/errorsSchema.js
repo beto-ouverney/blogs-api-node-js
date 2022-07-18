@@ -1,4 +1,8 @@
 const errorsSchema = {
+  userNotExist: {
+    status: 404,
+    message: 'User does not exist',
+  },
   userAlreadyExists: {
     status: 409,
     message: 'User already registered',

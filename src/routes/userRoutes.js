@@ -7,6 +7,7 @@ const userRoutes = Router();
 
 userRoutes.post('/login', ValidateLogin, UserControllers.UserLoginController)
 .post('/user', UserControllers.UserAddController)
-.get('/user', CheckToken, UserControllers.GetAllUserController);
+.get('/user', CheckToken, UserControllers.GetAllUserController)
+.get('/user/:id', CheckToken, UserControllers.GetByIDUserController);
 
 module.exports = { userRoutes };
