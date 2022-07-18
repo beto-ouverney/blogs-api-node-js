@@ -1,4 +1,8 @@
 const errorsSchema = {
+  nameIsRequired: {
+    status: 400,
+    message: '"name" is required',
+  },
   userNotExist: {
     status: 404,
     message: 'User does not exist',
