@@ -1,3 +1,4 @@
 const { AddCategoryService } = require('./addCategoryService');
+const { GetAllCategoryService } = require('./getAllCategoryService');
 
-module.exports = { AddCategoryService };
+module.exports = { AddCategoryService, GetAllCategoryService };

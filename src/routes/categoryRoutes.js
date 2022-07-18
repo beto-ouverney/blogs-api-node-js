@@ -4,6 +4,7 @@ const { CheckToken } = require('../middlewares/checkToken');
 
 const categoryRoutes = Router();
 
-categoryRoutes.post('/categories', CheckToken, CategoryControllers.AddCategoryController);
+categoryRoutes.post('/categories', CheckToken, CategoryControllers.AddCategoryController)
+.get('/categories', CheckToken, CategoryControllers.GetAllCategoryController);
 
 module.exports = { categoryRoutes };
