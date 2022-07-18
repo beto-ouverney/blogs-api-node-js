@@ -3,11 +3,11 @@ const { CustomError } = require('../helpers/CustomError');
 const { errorsSchema } = require('../schemas/errorsSchema');
 
 async function CheckToken(req, res, next) {
-  const { autorization } = req.headers;
-  if (!autorization) {
+  const token = req.headers.authorization;
+  if (!token) {
     throw new CustomError(errorsSchema.tokenNotFound.status, errorsSchema.tokenNotFound.message);
   }
-  const credentials = await VerifyToken(autorization);
+  const credentials = await VerifyToken(token);
   if (!credentials) {
     throw new CustomError(errorsSchema.invalidToken.status, errorsSchema.invalidToken.message);
   }
