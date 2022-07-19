@@ -5,5 +5,6 @@ const PostControllers = require('../controllers/postControllers/PostControllers'
 const postRoutes = Router();
 
 postRoutes.post('/post', CheckToken, PostControllers.AddPostController);
+postRoutes.get('/post', CheckToken, PostControllers.GetAllPostController);
 
 module.exports = { postRoutes };
