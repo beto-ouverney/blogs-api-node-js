@@ -5,7 +5,7 @@ const { VerifyToken } = require('../../helpers/token/verifyToken');
 
 async function verifyFields(post) {
   if (!post.title || !post.content) {
-    throw new CustomError(errorsSchema.misssingFields.status, errorsSchema.misssingFields.message);
+    throw new CustomError(errorsSchema.missingFields.status, errorsSchema.missingFields.message);
   }
   const categories = await Models.Category.findAll({ where: { id: post.categoryIds } });
   const categoriesIds = categories.map((e) => e.dataValues.id);

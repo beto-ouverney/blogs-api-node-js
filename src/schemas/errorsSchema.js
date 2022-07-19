@@ -1,4 +1,8 @@
 const errorsSchema = {
+  notAuthorized: {
+    status: 401,
+    message: 'Unauthorized user',
+  },
   postNotExist: {
     status: 404,
     message: 'Post does not exist',
@@ -19,7 +23,7 @@ const errorsSchema = {
     status: 409,
     message: 'User already registered',
   },
-  misssingFields: {
+  missingFields: {
     status: 400,
     message: 'Some required fields are missing',
   },
