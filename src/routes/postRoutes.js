@@ -7,6 +7,7 @@ const postRoutes = Router();
 postRoutes.post('/post', CheckToken, PostControllers.AddPostController)
 .get('/post', CheckToken, PostControllers.GetAllPostController)
 .get('/post/:id', CheckToken, PostControllers.GetByIDPostController)
-.put('/post/:id', CheckToken, PostControllers.UpdatePostController);
+.put('/post/:id', CheckToken, PostControllers.UpdatePostController)
+.delete('/post/:id', CheckToken, PostControllers.DeletePostController);
 
 module.exports = { postRoutes };
