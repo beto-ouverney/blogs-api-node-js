@@ -3,7 +3,7 @@ const { CustomError } = require('../CustomError');
 const { errorsSchema } = require('../../schemas/errorsSchema');
 require('dotenv').config();
 
-async function VerifyToken(token) {
+function VerifyToken(token) {
   return new Promise((resolve) => {
     jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
       if (error) {
