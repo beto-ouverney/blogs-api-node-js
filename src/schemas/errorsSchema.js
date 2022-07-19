@@ -1,4 +1,8 @@
 const errorsSchema = {
+  categoryNotFound: {
+    status: 400,
+    message: '"categoryIds" not found',
+  },
   nameIsRequired: {
     status: 400,
     message: '"name" is required',
