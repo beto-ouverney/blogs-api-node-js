@@ -10,10 +10,13 @@ async function getUserId(token) {
 
 async function DeletePostService(id, token) {
   const post = await Models.BlogPost.findOne({ where: { id } });
+  console.log(id);
+  console.log('TESTE');
   if (!post) {
-    throw new CustomError(errorsSchema.postNotFound.status, errorsSchema.postNotFound.message);
+    throw new CustomError(errorsSchema.postNotExist.status, errorsSchema.postNotExist.message);
   }
   const userId = await getUserId(token);
+  console.log(post.userId);
   if (post.userId !== userId) {
     throw new CustomError(errorsSchema.notAuthorized.status, errorsSchema.notAuthorized.message);
   }
