@@ -5,7 +5,7 @@ async function UpdatePostController(req, res) {
   const token = req.headers.authorization;
   const post = req.body;
   const postUpdated = await PostServices.UpdatePostService(post, token, id);
-  res.status(200).json(postUpdated);
+  return res.status(200).json(postUpdated);
 }
 
 module.exports = { UpdatePostController };

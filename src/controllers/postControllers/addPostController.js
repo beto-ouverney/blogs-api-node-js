@@ -4,7 +4,7 @@ async function AddPostController(req, res) {
   const token = req.headers.authorization;
   const post = req.body;
   const postAdded = await PostServices.AddPostService(post, token);
-  res.status(201).json(postAdded);
+  return res.status(201).json(postAdded);
 }
 
 module.exports = { AddPostController };
