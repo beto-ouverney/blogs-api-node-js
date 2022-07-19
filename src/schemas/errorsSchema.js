@@ -1,4 +1,8 @@
 const errorsSchema = {
+  postNotExist: {
+    status: 404,
+    message: 'Post does not exist',
+  },
   categoryNotFound: {
     status: 400,
     message: '"categoryIds" not found',

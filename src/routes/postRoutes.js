@@ -6,5 +6,6 @@ const postRoutes = Router();
 
 postRoutes.post('/post', CheckToken, PostControllers.AddPostController);
 postRoutes.get('/post', CheckToken, PostControllers.GetAllPostController);
+postRoutes.get('/post/:id', CheckToken, PostControllers.GetByIDPostController);
 
 module.exports = { postRoutes };
