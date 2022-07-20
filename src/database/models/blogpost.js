@@ -21,6 +21,5 @@ module.exports = (sequelize, DataTypes) => {
       as: 'user',
     })
   }
-
   return BlogPost;
 };
