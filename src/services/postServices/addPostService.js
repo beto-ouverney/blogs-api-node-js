@@ -1,7 +1,7 @@
 const Models = require('../../database/models');
 const { CustomError } = require('../../helpers/CustomError');
 const { errorsSchema } = require('../../schemas/errorsSchema');
-const { VerifyToken } = require('../../helpers/token/verifyToken');
+const { getUserID } = require('../../helpers/getUserID');
 
 async function verifyFields(post) {
   if (!post.title || !post.content) {
@@ -14,13 +14,9 @@ async function verifyFields(post) {
        errorsSchema.categoryNotFound.message);
   }
 }
-async function getUserId(token) {
-  const credentials = await VerifyToken(token);
-  return credentials.data.id;
-}
 async function AddPostService(post, token) {
   await verifyFields(post);
-  const userId = await getUserId(token);
+  const userId = await getUserID(token);
   const newPost = { title: post.title,
     content: post.content,
     userId,

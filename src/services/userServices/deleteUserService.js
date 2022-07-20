@@ -1,14 +1,9 @@
 const { User } = require('../../database/models/index');
-const { VerifyToken } = require('../../helpers/token/verifyToken');
-
-async function getUserId(token) {
-  const credentials = await VerifyToken(token);
-  return credentials.data.id;
-}
+const { getUserID } = require('../../helpers/getUserID');
 
 async function DeleteUserService(token) {
-  const userId = await getUserId(token);
-  await User.destroy({ where: { id: userId } });
+  const id = await getUserID(token);
+  await User.destroy({ where: { id } });
 }
 
 module.exports = { DeleteUserService };

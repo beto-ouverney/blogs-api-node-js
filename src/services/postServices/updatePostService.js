@@ -1,12 +1,7 @@
 const Models = require('../../database/models');
 const { CustomError } = require('../../helpers/CustomError');
 const { errorsSchema } = require('../../schemas/errorsSchema');
-const { VerifyToken } = require('../../helpers/token/verifyToken');
-
-async function getUserId(token) {
-  const credentials = await VerifyToken(token);
-  return credentials.data.id;
-}
+const { getUserID } = require('../../helpers/getUserID');
 
 function verifyFields(post) {
   if (!post.title) {
@@ -18,7 +13,7 @@ function verifyFields(post) {
   }
 }
 async function UpdatePostService(updatedPost, token, postId) {
-  const userId = await getUserId(token);
+  const userId = await getUserID(token);
   verifyFields(updatedPost);
   const post = await Models.BlogPost.findOne({ where: { id: postId } });
   if (post.userId !== userId) {
