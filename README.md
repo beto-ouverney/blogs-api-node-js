@@ -1,10 +1,10 @@
-# Blogs API NODE.JS with SEQUELIZE,MYSQL, JWT, SOLID and MSC Architecture #
+# Blogs API NODE.JS with DOCKER, SEQUELIZE, MYSQL, JWT, SOLID and MSC Architecture #
 
 Development of an API and DATABASE for a blog using JWT for security
 
 # Other Versions of this project with other languages #
 
-[Blogs API GO LANG with MYSQL, JWT, SOLID and Clean Architecture Version](https://github.com/beto-ouverney/blogs-api-golang)
+[Blogs API GO LANG with DOCKER, MYSQL, JWT, SOLID and Clean Architecture Version](https://github.com/beto-ouverney/blogs-api-golang)
 
 ## Table of contents
 
@@ -20,7 +20,7 @@ Development of an API and DATABASE for a blog using JWT for security
 
 ### The challenge
 
-Blogs API NODE.JS with SEQUELIZE ORM,MYSQL, JWT, SOLID and MSC Architecture
+Blogs API NODE.JS with DOCKER, SEQUELIZE ORM, MYSQL, JWT, SOLID and MSC Architecture
 
 **The users must be capable of**
 
